@@ -37,6 +37,6 @@ class OrderController extends Controller
         $order->checkout = 1;
         $order->save();
 
-        return redirect()->back()->with('crud', 'Check Out');
+        return redirect()->route('order.index')->with('crud', 'Check Out');
     }
 }

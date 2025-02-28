@@ -42,7 +42,7 @@ Route::name('auth.')->controller(AuthController::class)->group(function () {
 
 
 //user
-Route::prefix('user')->middleware(['auth', 'role'])->name('user.')->controller(UserController::class)->group(function () {
+Route::prefix('user')->middleware(['auth'])->name('user.')->controller(UserController::class)->group(function () {
     Route::get('index', 'index')->name('index')->withoutMiddleware(['auth', 'role']);
     Route::get('create', 'create')->name('create');
     Route::post('add', 'add')->name('add');
@@ -52,7 +52,7 @@ Route::prefix('user')->middleware(['auth', 'role'])->name('user.')->controller(U
 });
 
 //room
-Route::prefix('room')->middleware(['auth', 'role'])->name('room.')->controller(RoomsController::class)->group(function () {
+Route::prefix('room')->middleware(['auth'])->name('room.')->controller(RoomsController::class)->group(function () {
     Route::get('index', 'index')->name('index')->withoutMiddleware(['auth', 'role']);
     Route::get('create', 'create')->name('create');
     Route::post('add', 'add')->name('add');

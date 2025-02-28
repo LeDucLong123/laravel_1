@@ -75,7 +75,7 @@ class RoomsController extends Controller
             ]);
             $room->roomStatus = 1;
             $room->save();
-            return redirect()->back()->with('crud', 'Occupied');
+            return redirect()->route('room.index')->with('crud', 'Occupied');
         } else {
             return redirect()->back()->with('err', 'Unauthenticated');
         }
