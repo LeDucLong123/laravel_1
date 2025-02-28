@@ -53,6 +53,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    // 'url' => env('APP_URL', 'https://redesigned-space-bassoon-6957wqp954g35wv-8000.app.github.dev'),
 
     /*
     |--------------------------------------------------------------------------

@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\URL;
+use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
+use Illuminate\Http\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,5 +29,10 @@ class AppServiceProvider extends ServiceProvider
         if (env('APP_ENV') !== 'local') {
             URL::forceScheme('https');
         }
+
+        // Request::setTrustedProxies(
+        //     [$this->app->request->getClientIp()], 
+        //     Request::HEADER_X_FORWARDED_PROTO
+        // );
     }
 }
