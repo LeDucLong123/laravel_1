@@ -87,12 +87,12 @@ php artisan serve
 ## Sequence Diagram :Booking Room
 ```mermaid
 sequenceDiagram
-    User->>Server: Yêu cầu đặt phòng
-    Server->>Room: Kiểm tra phòng trống
-    Room-->>Server: Trả về thông tin phòng
-    Server->>Order: Tạo Order và lưu
-    Order-->>Server: Lưu thành công
-    Server-->>User: Gửi kết quả cho User
+    Users->>Server: Yêu cầu đặt phòng
+    Server->>Rooms: Kiểm tra phòng trống
+    Rooms-->>Server: Trả về thông tin phòng
+    Server->>Orders: Tạo Order và lưu
+    Orders-->>Server: Lưu thành công
+    Server-->>Users: Gửi kết quả cho User
 ```
 
 ---
@@ -100,12 +100,12 @@ sequenceDiagram
 ## Sequence Diagram :Check-out
 ```mermaid
 sequenceDiagram
-    User->>Server: Gửi yêu cầu trả phòng
-    Server->>Order: Kiểm tra thông tin đơn đặt phòng
-    Order-->>Server: Trả về thông tin đặt phòng
-    Server->>Room: Cập nhật trạng thái phòng (Phòng trống)
-    Room-->>Server: Xác nhận cập nhật thành công
-    Server-->>User: Xác nhận trả phòng thành công
+    Users->>Server: Gửi yêu cầu trả phòng
+    Server->>Orders: Kiểm tra thông tin đơn đặt phòng
+    Orders-->>Server: Trả về thông tin đặt phòng
+    Server->>Rooms: Cập nhật trạng thái phòng (Phòng trống)
+    Rooms-->>Server: Xác nhận cập nhật thành công
+    Server-->>Users: Xác nhận trả phòng thành công
 ```
 
 ---
